@@ -1,0 +1,82 @@
+﻿body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .registerHeader {
+        margin-bottom: 40px;
+        font-size: 25px;
+        letter-spacing: .1rem;
+    }
+
+input[type=text],
+select {
+    font-size: 15px;
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password],
+select {
+    font-size: 15px;
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email],
+select {
+    font-size: 15px;
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.registerForm {
+    text-align: center;
+    padding: 55px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 42px -24px rgba(66, 68, 90, 0.6);
+}
+
+.registerButton {
+    background: none;
+    padding: 8px;
+    border: none;
+    background-color: #3867d6;
+    border-radius: 4px;
+    color: white;
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 50px;
+    width: 35%;
+}

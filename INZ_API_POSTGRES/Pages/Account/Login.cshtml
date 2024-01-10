@@ -1,0 +1,51 @@
+﻿@page
+@model INZ_API_POSTGRES.Pages.Account.LoginModel
+@{
+ 
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/Login.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+    <div class="loginForm">
+        <div class="loginHeader">LOGIN</div>
+        <form method="post" asp-page="Login">
+            @Html.AntiForgeryToken()
+            <div class="input-group">
+                
+                <input type="text" name="Username" asp-for="@Model.Username" placeholder="Username" />
+      
+           
+                
+                <input type="password" name="Password" asp-for="@Model.Password" placeholder = "Password"/>
+
+                <div class="rememberMe">
+                    <input type="checkbox" name="RememberMe" asp-for="@Model.RememberMe" />
+                    <label for="RememberMe">Remember Me</label>
+                    
+                </div>
+                
+               
+                <button class="loginButton" type="submit">Submit</button>
+            
+            <div id="error" asp-validation-summary="All"></div>
+            
+            <a asp-page="Register">Register</a>
+            </div>
+        </form>
+
+    </div>
+
+        
+
+
+
+</body>
+</html>

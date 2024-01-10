@@ -1,0 +1,19 @@
+﻿@page
+@model INZ_API_POSTGRES.Pages.Account.LogoutModel
+@{
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Logout</title>
+</head>
+
+<body>
+    <form method="post" asp-page="Logout">
+        @Html.AntiForgeryToken()
+        <button type="submit">Logout</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+﻿@page
+@model INZ_API_POSTGRES.Pages.Account.SettingsModel
+@{
+	Layout = "../App/AppLayout";
+	@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<link rel="stylesheet" href="/css/Settings.css" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+<div class="container">
+	<div class="form-section">
+	 
+	<form method="post" asp-page-handler="GenerateNewKey">
+
+
+	<div class="input-group">
+	 @if(TempData["SuccessMessageKey"] != null)
+		{			
+				@TempData["SuccessMessageKey"]<br />
+		}
+		</div>
+	<div class="input-group">
+		<label for="email">Email</label>
+		<input type="email" name="email" value="@Model.Email" disabled>
+	</div>
+	<div class="input-group">
+		<label for="username">Username</label>
+		<input type="text" name="username" value="@Model.Username" disabled>
+	</div>
+	<div class="input-group">
+		<label for="apikey">API Key</label>
+		<input type="text" name="apikey" value="@Model.Apikey" disabled>
+	</div>
+
+		<button class ="button" type="submit">Generate New API</button>
+
+	</form>
+	</div>
+
+		<div class="form-section">
+		@if(TempData["SuccessMessagePassword"] != null)
+			{			
+					@TempData["SuccessMessagePassword"]
+			}
+		<form method="post" asp-page-handler="ChangePassword">		
+				<div class="input-group">
+					<label for="Password">Password</label>
+					<input type="password" name="Password" >
+				</div>
+				<div class="input-group">
+					<label for="NewPassword">New Password</label>
+					<input type="password" name="NewPassword"/>
+				</div>
+				<div class="input-group">
+					<label for="ConfirmPassword">Confirm Password</label>
+					<input type="password" name="ConfirmPassword"/>
+				</div>
+				<div class="input-group">
+					<div id="error" asp-validation-summary="All"></div>
+				</div>
+					<button class ="button" type="submit">Change Password</button>
+				
+		</form>
+		</div>
+</div>
+

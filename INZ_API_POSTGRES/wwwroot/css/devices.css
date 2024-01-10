@@ -1,0 +1,54 @@
+﻿body {}
+
+
+
+
+
+.actionButtons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.listTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+
+.listTable td,
+.listTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.listTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.listTable tr:hover {
+    background-color: #ddd;
+}
+
+.listTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3867d6;
+    color: white;
+}
+
+.actionButton2 {
+    background: none;
+    border: none;
+    background-color: #3867d6;
+    border-radius: 4px;
+    color: white;
+    padding: 8px;
+}
+
+#removeButton {
+    background-color: indianred;
+}

@@ -1,0 +1,40 @@
+﻿body {
+}
+
+
+.chart{
+    height:500px;
+    width:100%;
+}
+
+#chartCanvas {
+    width: 100%;
+}
+
+.dateButton {
+    background: none;
+    padding: 8px;
+    border: none;
+    background-color: #3867d6;
+    border-radius: 4px;
+    color: white;
+    margin-top: 15px;
+}
+input[type=date],
+select {
+    font-size: 15px;
+    padding: 8px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.dateHeader{
+    padding: 20px 0 0 10px;
+}
+
+h2{
+    margin-left:10px;
+}

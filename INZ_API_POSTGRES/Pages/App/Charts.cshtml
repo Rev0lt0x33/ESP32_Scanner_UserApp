@@ -1,0 +1,68 @@
+﻿@page
+@model INZ_API_POSTGRES.Pages.App.ChartsModel
+@{
+	@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+    Layout = "AppLayout";
+}
+      <link rel="stylesheet" href="/css/Chart.css"/>
+        <link rel="stylesheet" href="/css/Index.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+
+
+    
+   	<form method="post" asp-page="Charts">
+           <h2 id="stat">Statistics</h2>
+           <div class="input-group">
+               
+               <input type="date" name="InputDate" id="datePicker" min="2024-01-01" placeholder="2024-01-01" asp-for="@Model.InputDate" />						
+                <button class="dateButton" type="submit">Pick date</button>
+           </div>
+        
+		
+	</form>
+    
+    <div class="chart">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+         addEventListener("DOMContentLoaded",(event) =>{
+             document.getElementById('datePicker').valueAsDate = new Date();xx
+            console.log("te");
+        });</script>
+
+
+    <script>
+
+        var ctx = document.getElementById('chartCanvas').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Model.LabelsJson),
+                datasets: [{
+                    label: 'Count',
+                    data: @Html.Raw(Model.DataJson),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
